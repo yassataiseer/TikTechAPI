@@ -14,7 +14,18 @@ sys.path.append(
     os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir)))
 
 user_template = Blueprint("user_template",__name__)## extends app.py
-
+class Alluser:
+    def all_users(self):
+        #grabs all users from Users Table
+        all_data = Users.query.all()
+        print(all_data[0].Username)
+        data = ["Username","Password"]
+        final_data = []
+        for i in range(len(all_data)):
+            print(all_data[i].Username)
+            row = {"Username":all_data[i].Username,"Password":all_data[i].Password}
+            final_data.append(row)
+        return final_data
 class user:
     def __init__(self,username,password):
         self.username =  username
@@ -66,10 +77,6 @@ class user:
         db.session.commit()
         return {"Status":True}
 
-    def all_users(self):
-        #grabs all users from Users Table
-        all_data = db.session.query()
-        pass
 
 #add = user("Yassa Taiseer","yassa123")
 #print(add.add_user())
