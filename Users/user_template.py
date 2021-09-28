@@ -21,16 +21,21 @@ class mk_user(Resource):
         status = new_user.add_user()
         return jsonify(status)
 
-
 class validate_user(Resource):
     def get(self,Username,Password):
         new_user = user(Username,Password)
         status = new_user.check_user()
         return jsonify(status)
 
+class update_user(Resource):
+    def get(self,Username,Password):
+        new_user = user(Username,Password)
+        status = new_user.update_users()
+        return jsonify(status)
+
 api.add_resource(mk_user,"/mk_user/<string:Username>/<string:Password>")##creates user
 api.add_resource(validate_user,"/validate_user/<string:Username>/<string:Password>")##creates user
-
+api.add_resource(update_user,"/update_user/<string:Username>/<string:Password>")##Update password
 
 
 

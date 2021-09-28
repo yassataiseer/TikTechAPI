@@ -55,6 +55,17 @@ class user:
         #check to see if the Username is already taken.
         return exists
     
+    def update_users(self):
+        change_psswd = Users.query.filter_by(Username=self.username).first()
+        #Find row where username is equal to Yassa Taiseer
+        if(change_psswd==None):##if it does not exist
+            return {"Status":False}
+
+        change_psswd.Password = self.password
+        #modify the password
+        db.session.commit()
+        return {"Status":True}
+
     def all_users(self):
         #grabs all users from Users Table
         all_data = db.session.query()
