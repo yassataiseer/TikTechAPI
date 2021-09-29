@@ -29,8 +29,14 @@ class update_Client(Resource):
         status = Client.update_Client(Name,Address,Postal_code,Email,Phone_number,id)
         return jsonify(status)
 
+class all_Client(Resource):
+    def get(self):
+        status = Client.all_Clients()
+        return jsonify(status)
+
 api.add_resource(mk_Client,"/mk_Client/<string:Name>/<string:Address>/<string:Postal_code>/<string:Email>/<string:Phone_number>")##creates client
 api.add_resource(del_Client,"/del_Client/<int:id>")##deletes client
 api.add_resource(update_Client,"/update_Client/<string:Name>/<string:Address>/<string:Postal_code>/<string:Email>/<string:Phone_number>/<int:id>")
 ##updates user
+api.add_resource(all_Client,"/all_Clients")
 
