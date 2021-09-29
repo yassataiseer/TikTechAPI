@@ -7,6 +7,7 @@ from decouple import config
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 from Users.user_template import user_template
+from Clients.client_template import client_template
 host = config('HOST') 
 user = config('USERNAME') 
 passwd = config('PASSWORD')
@@ -17,6 +18,7 @@ api = Api(app)
 CORS(app)
 cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 app.register_blueprint(user_template,url_prefix="/Users")
+app.register_blueprint(client_template,url_prefix="/Clients")
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://'+user+':'+passwd+'@'+host+'/'+database
 ##connect to mysql via SQLALCHEMY

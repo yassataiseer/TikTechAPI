@@ -1,5 +1,5 @@
 
-##views for Users table related tasks
+##classes for Users table related tasks
 import mysql.connector
 import os
 from dotenv import load_dotenv

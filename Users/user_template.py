@@ -1,7 +1,8 @@
+## Views for the Users
+
 from flask import Flask, json, jsonify,Blueprint
 from flask_restful import Api, Resource, reqparse, abort, fields, marshal_with
 from Users.user_manager import user,Alluser
-from flask_httpauth import HTTPBasicAuth
 from flask_cors import CORS
 
 
@@ -10,7 +11,6 @@ user_template = Blueprint("user_template",__name__)## extends app.py
 api = Api(user_template)
 CORS(user_template, resources={r"/api/*": {"origins": "*"}})
 
-auth = HTTPBasicAuth()##instance of basic auth
 
 
 
