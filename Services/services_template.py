@@ -23,6 +23,18 @@ class all_Services(Resource):
         data = Service.grab_services()
         return jsonify(data)
 
+class update_Services(Resource):
+    def get(self,Service_name,Service_purpose,Service_cost):
+        status = Service.update_service(Service_name,Service_purpose,Service_cost)
+        return jsonify(status)
+
+
+class del_Services(Resource):
+    def get(self,Service_name):
+        data = Service.delete_service(Service_name)
+        return jsonify(data)
 
 api.add_resource(mk_Service,"/mk_Service/<string:Service_name>/<string:Service_purpose>/<float:Service_cost>")##creates client
-api.add_resource(all_Services,"/all_Services")##creates client
+api.add_resource(all_Services,"/all_Services")
+api.add_resource(del_Services,"/del_Services/<string:Service_name>")
+api.add_resource(update_Services,"/update_Services/<string:Service_name>/<string:Service_purpose>/<float:Service_cost>")##creates client
