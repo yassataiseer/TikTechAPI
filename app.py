@@ -9,6 +9,7 @@ from flask_cors import CORS
 from Users.user_template import user_template
 from Clients.client_template import client_template
 from Services.services_template import services_template
+from Inventory.inventory_template import inventory_template
 host = config('HOST') 
 user = config('USERNAME') 
 passwd = config('PASSWORD')
@@ -21,6 +22,7 @@ cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 app.register_blueprint(user_template,url_prefix="/Users")
 app.register_blueprint(client_template,url_prefix="/Clients")
 app.register_blueprint(services_template,url_prefix="/Services")
+app.register_blueprint(inventory_template,url_prefix="/Inventory")
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://'+user+':'+passwd+'@'+host+'/'+database
 ##connect to mysql via SQLALCHEMY

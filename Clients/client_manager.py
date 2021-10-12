@@ -1,5 +1,5 @@
 
-##views for Users table related tasks
+##classes for Client table related tasks
 from operator import truediv
 import mysql.connector
 import os
@@ -15,7 +15,6 @@ from sqlalchemy import exc
 sys.path.append(
     os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir)))
 
-user_template = Blueprint("user_template",__name__)## extends app.py
 
 class Client:
     def add_Client(Name,Address,Postal_code,Email,Phone_number):
