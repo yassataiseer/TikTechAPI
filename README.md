@@ -8,6 +8,7 @@
 | Users | Manage all possible users |
 | Clients | Manage all possible customer data |
 | Services | Manage all possible services that the client can access |
+| Inventory | Manage all inventory @tiktech store |
 
 
 
