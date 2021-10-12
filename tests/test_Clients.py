@@ -15,7 +15,7 @@ sys.path.append(
 def test_InsertClient(app, client): 
     ##Tests to see if data inserts into db
     del app
-    res = client.get('Clients/mk_Client/John Doe/123 Elm St/X5D 4J5/test@gmail.com/333888318893')
+    res = client.get('Clients/mk_Client/Jane Doe/123 Elm St/X5D 4J5/test@gmail.com/333888318893')
     assert res.status_code == 200
     expected = { "Status": True }
     assert expected == json.loads(res.get_data(as_text=True))

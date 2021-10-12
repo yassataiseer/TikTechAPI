@@ -47,7 +47,7 @@ class grab_users(Resource):
 api.add_resource(mk_user,"/mk_user/<string:Username>/<string:Password>")##creates user
 api.add_resource(validate_user,"/validate_user/<string:Username>/<string:Password>")##creates user
 api.add_resource(update_user,"/update_user/<string:Username>/<string:Password>")##Update password
-api.add_resource(delete_user,"/delete_user/<string:Username>/<string:Password>")##Update password
+api.add_resource(delete_user,"/delete_user/<string:Username>/<string:Password>")##Deletes the user
 api.add_resource(grab_users,"/grab_users")##grab all user data
 
 
