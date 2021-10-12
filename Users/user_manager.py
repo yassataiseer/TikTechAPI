@@ -1,6 +1,5 @@
 
 ##classes for Users table related tasks
-import mysql.connector
 import os
 from dotenv import load_dotenv
 from decouple import config
@@ -32,14 +31,6 @@ class user:
         self.password = password
         #convert to sha256 for user's privacy
 
-    def connect():
-        ##debugging function
-        db =mysql.connector.connect(
-        host = config('HOST') ,
-        user = config('USERNAME') ,
-        passwd = config('PASSWORD'),
-        database = config('DATABASE'))
-        return db 
     def add_user(self):
         if not user.check_if_user_exists(self):
             query = Users(Username=self.username,Password=self.password)
