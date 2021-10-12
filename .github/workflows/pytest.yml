@@ -32,5 +32,5 @@ jobs:
       - name: Run test suite
         run: |
           pip3 install pytest
-          pip install pytest
+          pip3 install -r requirements.txt
           pipenv run test -v
