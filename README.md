@@ -19,3 +19,11 @@ Testing is directly proportionate to the work done. View under `tests` directory
 ### Testing Requirements:
 Testing works very easily within this API. Make sure to not be using any
 docker containers or closed environments that prevent access to the MySQL db.
+
+### Virutual ENV:
+``` 
+python3 -m venv env
+source env/bin/activate
+deactivate
+^to deactivate env
+```
