@@ -42,3 +42,20 @@ class Inventory_Builder:
             return {"Status":True}
         except exc.SQLAlchemyError:
             return {"Status":False}
+    def grab_Inventory():
+        ## Grab inventory data from db
+        all_data = Inventory.query.all()
+        final_data = []
+        for i in range(len(all_data)):
+            row = {"Item":all_data[i].Item,"Barcode":all_data[i].Barcode,
+            "Price":float(all_data[i].Price),"Quantity":all_data[i].Quantity,"Status":all_data[i].Status}
+            final_data.append(row)
+        return final_data
+    def delete_Inventory(Item):
+        try:
+            Inventory.query.filter_by(Item=Item).delete()
+            db.session.commit()
+            #delete user from db
+            return {"Status": True}
+        except exc.SQLAlchemyError:
+            return {"Status":False}
