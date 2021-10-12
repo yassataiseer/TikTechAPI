@@ -1,6 +1,5 @@
 ##classes for Services table related tasks
 from operator import truediv
-import mysql.connector
 import os
 from dotenv import load_dotenv
 from decouple import config
