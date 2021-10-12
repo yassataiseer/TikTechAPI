@@ -31,4 +31,6 @@ jobs:
           pipenv install --deploy --dev
       - name: Run test suite
         run: |
+          pip3 install pytest
+          pip install pytest
           pipenv run test -v
