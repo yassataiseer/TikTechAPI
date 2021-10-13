@@ -16,7 +16,7 @@ class Users(db.Model):
     Password = db.Column(db.String(255),  nullable=False)
 
 class Clients(db.Model):
-    Name = db.Column(db.String(255), unique=True, nullable=False)
+    Name = db.Column(db.String(255), unique=False, nullable=False)
     Address = db.Column(db.String(300), unique=False, nullable=False)
     PostalCode = db.Column(db.String(50), unique=False, nullable=False)
     Email = db.Column(db.String(200), unique=False, nullable=False)
@@ -39,11 +39,11 @@ class Inventory(db.Model):
 class Orders(db.Model):
     Order_no = db.Column(db.Integer , primary_key=True, unique=True)
     Deleted = db.Column(db.Boolean, default=False, nullable=False)
-    Client = db.Column(db.String(255), unique=True, nullable=False)
-    Employee = db.Column(db.String(255), unique=True, nullable=False)
-    Product = db.Column(db.String(255), unique=True, nullable=False)
-    Brand = db.Column(db.String(255), unique=True, nullable=False)
-    Accessory = db.Column(db.String(255), unique=True, nullable=False)
+    Client = db.Column(db.String(255),  nullable=False)
+    Employee = db.Column(db.String(255), nullable=False)
+    Product = db.Column(db.String(255), nullable=False)
+    Brand = db.Column(db.String(255),  nullable=False)
+    Accessory = db.Column(db.String(255), nullable=False)
     Price = db.Column(db.Numeric, nullable=False)
     Status = db.Column(db.String(255), nullable=False)
     Service = db.Column(db.String(500), nullable=False)
