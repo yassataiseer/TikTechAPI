@@ -64,6 +64,6 @@ class Client:
         final_data = []
         for i in range(len(all_data)):
             row = {"Username":all_data[i].Name,"Address":all_data[i].Address,
-            "Postal_code":all_data[i].PostalCode,"Email":all_data[i].Email,"Phone Number":all_data[i].Phone_No,"Deleted":all_data[i].Deleted,"Id":all_data[i].Id}
+            "Postal_code":all_data[i].PostalCode,"Email":all_data[i].Email,"Phone_Number":all_data[i].Phone_No,"Deleted":all_data[i].Deleted,"Id":all_data[i].Id}
             final_data.append(row)
         return final_data
