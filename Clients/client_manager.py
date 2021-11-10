@@ -49,9 +49,9 @@ class Client:
                 return {"Status":False}
             Current_client.Name = Name
             Current_client.Address = Address
-            Current_client.Postal_code = Postal_code
+            Current_client.PostalCode = Postal_code
             Current_client.Email = Email
-            Current_client.Phone_number = Phone_number
+            Current_client.Phone_No = Phone_number
             #modify the row
             db.session.commit()
             return {"Status":True}
