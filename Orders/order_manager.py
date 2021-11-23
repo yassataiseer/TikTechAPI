@@ -56,7 +56,7 @@ class Order_Builder:
             "Add_date":all_data[i].Add_date,"Up_data":all_data[i].Up_date
             }
             final_data.append(row)
-        return final_data
+        return final_data[::-1]
 
     def del_Orders(Order_no):
         ## Delete client from the database
