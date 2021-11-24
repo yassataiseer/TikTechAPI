@@ -34,7 +34,7 @@ class Order_Builder:
             Current_Order.Product = Product
             Current_Order.Brand = Brand
             Current_Order.Accessory = Accessory
-            Current_Order.Amount = Amount
+            Current_Order.Price = Amount
             Current_Order.Status = Status
             Current_Order.Service = Service
             Current_Order.Comments = Comments
