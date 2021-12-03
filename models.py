@@ -27,12 +27,12 @@ class Clients(db.Model):
 class Services(db.Model):
     Service_Name = db.Column(db.String(255), primary_key=True, unique=True, nullable=False)
     Service_Purpose = db.Column(db.String(500), nullable=False)
-    Service_Cost = db.Column(db.Numeric, nullable=False)
+    Service_Cost = db.Column(db.Float(), nullable=False)
 
 class Inventory(db.Model):
     Item = db.Column(db.String(255), primary_key=True, unique=True, nullable=False)
     Barcode  = db.Column(db.String(255),  nullable=False)
-    Price = db.Column(db.Numeric, nullable=False)
+    Price = db.Column(db.Float(), nullable=False)
     Quantity = db.Column(db.Integer, nullable=False)
     Status = db.Column(db.String(255), nullable=False)
 
@@ -44,7 +44,7 @@ class Orders(db.Model):
     Product = db.Column(db.String(255), nullable=False)
     Brand = db.Column(db.String(255),  nullable=False)
     Accessory = db.Column(db.String(255), nullable=False)
-    Price = db.Column(db.Numeric, nullable=False)
+    Price = db.Column(db.Float(), nullable=False)
     Status = db.Column(db.String(255), nullable=False)
     Service = db.Column(db.String(500), nullable=False)
     Comments = db.Column(db.String(500), nullable=False)
